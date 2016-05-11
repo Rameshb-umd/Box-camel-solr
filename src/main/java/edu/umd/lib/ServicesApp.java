@@ -4,11 +4,12 @@ import org.apache.camel.CamelContext;
 import org.apache.camel.component.properties.PropertiesComponent;
 import org.apache.camel.impl.DefaultCamelContext;
 
+import edu.umd.lib.routes.BoxListener;
 import edu.umd.lib.routes.SolrRouter;
 
 /****
  * Main Service App
- * 
+ *
  * @author rameshb
  *
  */
@@ -19,6 +20,7 @@ public class ServicesApp {
     PropertiesComponent propertiesComponent = context.getComponent("properties", PropertiesComponent.class);
     propertiesComponent.setLocation("classpath:configuration.properties");
     propertiesComponent.setSystemPropertiesMode(PropertiesComponent.SYSTEM_PROPERTIES_MODE_OVERRIDE);
+    context.addRoutes(new BoxListener());
     context.addRoutes(new SolrRouter());
 
     context.start();

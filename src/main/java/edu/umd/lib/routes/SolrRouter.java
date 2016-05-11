@@ -73,7 +73,6 @@ public class SolrRouter extends RouteBuilder {
         .setHeader(Exchange.HTTP_QUERY).simple("commitWithin={{solr.commitWithin}}")
         .to("http4://{{solr.baseUrl}}/update")
         .to("log:DEBUG?showBody=true&showHeaders=true");
-    ;
 
   }
 

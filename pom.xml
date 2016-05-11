@@ -12,6 +12,7 @@
     <camel.version>2.17.0</camel.version>
     <slf4j.version>1.7.10</slf4j.version>
     <log4j.version>1.2.17</log4j.version>
+    <spring.version>3.2.2.RELEASE</spring.version>
   </properties>
   
   <dependencies>
@@ -50,12 +51,12 @@
     		<artifactId>camel-http4</artifactId>
    			 <version>${camel.version}</version>
 		</dependency>
-		  <dependency>
+		<dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-gson</artifactId>
             <version>${camel.version}</version>
         </dependency>
-         <dependency>
+        <dependency>
 			<groupId>org.json</groupId>
 			<artifactId>json</artifactId>
 			<version>20090211</version>
@@ -69,7 +70,73 @@
 			<groupId>org.apache.tika</groupId>
 			<artifactId>tika-parsers</artifactId>
 			<version>1.0</version>
-			</dependency>
+		</dependency>
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aop</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-spring</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-spring-javaconfig</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+			
+		   <!-- testing -->
+	    <dependency>
+	      <groupId>org.apache.camel</groupId>
+	      <artifactId>camel-test</artifactId>
+	      <version>${camel.version}</version>
+	      <scope>test</scope>
+	    </dependency>
+	    
+	     <dependency>
+	      <groupId>org.apache.camel</groupId>
+	      <artifactId>camel-jetty</artifactId>
+	      <version>${camel.version}</version>
+	    <!-- use the same version as your Camel core version -->
+	     </dependency>
+	     
+	     <dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-http</artifactId>
+			<version>${camel.version}</version>
+		</dependency>
+		
+		<dependency>
+	       <groupId>org.apache.httpcomponents</groupId>
+	       <artifactId>httpclient</artifactId>
+	       <version>4.3.5</version>
+        </dependency>
+		
     </dependencies>
    <build>
     <defaultGoal>install</defaultGoal>
